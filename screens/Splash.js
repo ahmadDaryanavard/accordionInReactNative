@@ -1,4 +1,10 @@
-import { View, Text, ActivityIndicator, Animated } from "react-native";
+import {
+  View,
+  Text,
+  ActivityIndicator,
+  Animated,
+  StyleSheet,
+} from "react-native";
 import React, { useEffect, useRef } from "react";
 import MyText from "../components/custom/MyText";
 import { width } from "../constants";
@@ -41,39 +47,51 @@ export default function Splash({ setMode }) {
     ]).start();
   }, []);
   return (
-    <View
-      style={{
-        flex: 1,
-        width: "100%",
-        height: "100%",
-        backgroundColor: "#3566e7",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "row",
-      }}
-    >
+    <View style={styles.container}>
       <Animated.Text
-        style={{
-          marginLeft: ARYANAVARDMarginAnimation,
-          opacity: ARYANAVARDOpacityAnimation,
-          fontSize: 40,
-          color: "white",
-          fontWeight: "bold",
-          marginBottom: 20,
-        }}
+        style={[
+          styles.ARYANAVARD,
+          {
+            marginLeft: ARYANAVARDMarginAnimation,
+            opacity: ARYANAVARDOpacityAnimation,
+          },
+        ]}
       >
         ARYANAVARD
       </Animated.Text>
       <Animated.Text
-        style={{
-          fontSize: DAnimation,
-          color: "white",
-          fontWeight: "bold",
-          marginBottom: 20,
-        }}
+        style={[
+          styles.D,
+          {
+            fontSize: DAnimation,
+          },
+        ]}
       >
         D
       </Animated.Text>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: "100%",
+    height: "100%",
+    backgroundColor: "#3566e7",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+  },
+  ARYANAVARD: {
+    fontSize: 40,
+    color: "white",
+    fontWeight: "bold",
+    marginBottom: 20,
+  },
+  D: {
+    color: "white",
+    fontWeight: "bold",
+    marginBottom: 20,
+  },
+});

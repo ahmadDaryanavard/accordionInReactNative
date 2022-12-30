@@ -12,7 +12,6 @@ export default function StepSlide(props) {
   const { nextStep } = props;
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const fadeIn = () => {
-    // Will change fadeAnim value to 1 in 5 seconds
     Animated.spring(fadeAnim, {
       toValue: -1 * Dimensions.get("window").width,
 

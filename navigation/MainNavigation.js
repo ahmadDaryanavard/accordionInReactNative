@@ -18,7 +18,6 @@ export default function MainNavigation() {
           drawerType: "slide",
           swipeEnabled: true,
           swipeEdgeWidth: 100,
-
           drawerStyle: {
             width: width(70),
           },

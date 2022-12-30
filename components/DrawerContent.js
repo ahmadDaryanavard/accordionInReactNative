@@ -139,7 +139,6 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
     padding: 10,
-
     height: "100%",
   },
 });
